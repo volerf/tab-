@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    ul{list-style-type: none;}
+    body{font-size: 12px;background-color:black;}
+    .tabs{width: 300px;background-color: #fff;margin: 100px auto;}
+    .tabs .options{height: 30px;line-height: 30px;}
+    .tabs .options span{display: inline-block;width: 57px;text-align: center;}
+    .tabs .options span.on{border-bottom: 2px solid orange; font-weight: bold;}
+    .tabs .contens{padding:10px 0;}
+    .tabs .contens li{ line-height: 25px; padding-left: 15px;}
+    .tabs .contens ul{ display: none; }
+    .tabs .contens ul.active{display:block;}
+    </style>
+    <script>
+    //  window是事件源  load是加载事件， 表示当页面中所的元素加载后后，再去处理js部分
+    window.onload=function(){
+        //得到所有的span
+        var spans = document.getElementsByTagName("span");
+        //得到所有的ul
+        var uls = document.getElementsByTagName("ul");
+        for(var i=0; i<spans.length; i++){
+            spans[i].index = i;
+            spans[i].onmouseover = function(){
+            //一、处理options 去掉所有的on 给当前span加on
+            for(var j=0; j<spans.length;j++){
+                spans[j].className = ""
+            }   
+            this.className = "on"
+            //二、处理ul 隐藏所有的ul 显示当前的ul
+            for(var k=0; k<spans.length; k++){
+                uls[k].style.display = "none";
+            } 
+            uls[this.index].style.display = "block";
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="tabs">
+        <div id="options" class="options">
+                <span class="on">公告</span>
+                <span>规则</span>
+                <span>论坛</span>
+                <span>安全</span>
+                <span>公益</span>
+            </div>
+            <div class="contens">
+                <ul class="active">
+                    <li><a href="">1猫618开抢 从“买买买”升级到新零售大派对</a></li>
+                    <li><a href="">1猫618开抢 从“买买买”升级到新零售大派对</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">2猫618开抢 从“买买买”升级到新零售大派对</a></li>
+                    <li><a href="">2猫618开抢 从“买买买”升级到新零售大派对</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">3猫618开抢 从“买买买”升级到新零售大派对</a></li>
+                    <li><a href="">3猫618开抢 从“买买买”升级到新零售大派对</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">4猫618开抢 从“买买买”升级到新零售大派对</a></li>
+                    <li><a href="">4猫618开抢 从“买买买”升级到新零售大派对</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">5猫618开抢 从“买买买”升级到新零售大派对</a></li>
+                    <li><a href="">5猫618开抢 从“买买买”升级到新零售大派对</a></li>
+                </ul>
+            </div>
+</div>
+</body>
+</html>
