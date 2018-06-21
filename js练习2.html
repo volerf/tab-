@@ -26,19 +26,19 @@
     as[0].onclick = function () {
         arr.unshift(arr.pop());
         //pop-删除数组的最后一个元素并返回删除的元素。unshift:将参数添加到原数组开头，并返回数组的长度。
-        // for(var i = 0;i < imgs.length; i++){
-        //     imgs[i].scr=arr[i];
-        // }
+        for(var i = 0;i < imgs.length; i++){
+            imgs[i].scr=arr[i];
+        }
         return false;
     }
-    // as[1].onclick = function () {
-    //     arr.push(arr.shift());
-    //     //shift()：删除原数组第一项，并返回删除元素的值；如果数组为空则返回undefined 。push(): 可以接收任意数量的参数，把它们逐个添加到数组末尾，并返回修改后数组的长度。
-    //     for(var i = 0;i < imgs.length; i++){
-    //         imgs[i].scr=arr[i];
-    //     }
-    //     return false;
-    // }
+    as[1].onclick = function () {
+        arr.push(arr.shift());
+        //shift()：删除原数组第一项，并返回删除元素的值；如果数组为空则返回undefined 。push(): 可以接收任意数量的参数，把它们逐个添加到数组末尾，并返回修改后数组的长度。
+        for(var i = 0;i < imgs.length; i++){
+            imgs[i].scr=arr[i];
+        }
+        return false;
+    }
 </script>
 </body>
 </html>
