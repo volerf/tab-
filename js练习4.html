@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="getScore">
+    <button id="btn">平均分</button>
+    <script>
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+        var str = document.getElementById("getScore").value;//value 属性可设置或返回密码域的默认值
+        var score = new Array();
+        score = str.split(",");
+        var max = 0;
+        var min = 0;
+        var sum = 0;
+        var avg = 0;
+        for(var i = 0; i < score.length; i++){
+            if(score[i] > max)
+            max = parseInt(score[i]);
+            if(score[i] < min)
+            min = parseInt(score[i]);
+            sum = sum + parseInt(score[i]);
+        }
+        avg = (sum-max-min)/8;
+        alert("平均分："+avg);
+        alert("最高分："+max);
+        alert("最低分："+min);
+        alert("总分："+sum);
+
+
+
+    }
+    </script>
+</body>
+</html>
